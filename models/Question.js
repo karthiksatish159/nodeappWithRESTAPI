@@ -1,0 +1,69 @@
+const mongoose=require('mongoose');
+const Schema=mongoose.Schema;
+const QuesitionsModel=new Schema({
+    user:{
+        type:mongoose.Schema.Types.ObjectId,
+        ref:"myPerson"
+    },
+    textone:{
+        type:String,
+        required:true
+    },
+    texttwo:{
+        type:String,
+        required:true
+    },
+    username:{
+        type:String
+    },
+    upvotes:[
+        {
+            user:{
+                type:mongoose.Schema.Types.ObjectId,
+                ref:"myPerson"
+            }
+        }
+    ],
+    answers:[
+        {
+            user:{
+                type:mongoose.Schema.Types.ObjectId,
+                ref:"myPerson"
+            },
+            text:{
+                type:String,
+                required:true
+            },
+            name:{
+                type:String
+            },
+            date:{
+                type:Date,
+                default:Date.now()
+            }
+        }
+    ],
+    comments:[
+    {
+        user:
+        {
+            type:mongoose.Schema.Types.ObjectId,
+            ref:"myperson"
+        },
+        text:{
+            type:String
+        }
+    }
+    ],
+    date:{
+        type:Date,
+        default:Date.now(),
+    }
+
+})
+QuesitionsModel.pre('save',function(next)
+{
+    this.date=Date.now();
+    next();
+})
+module.exports=Question=mongoose.model("question",QuesitionsModel);
