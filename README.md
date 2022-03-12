@@ -1,6 +1,10 @@
 # nodeappWithRESTAPI
 <h1>This my first application with nodejs based on api's</h1>
-<h4>And i implemented all http methods and i am bulid my api according to REST rules</h4>
+<h4>And i implemented all http methods and i am bulid my webservices according to REST rules and you can grab those web services using backed in REST i.e api's of REST</h4>
+<p>Also named as RESTapi or RESTfullApi's</p>
+<h3>Webservice</h3>
+<p>Webservices are used to do interaction b/w the two different plaforms or application or anything</p>
+<p>Webdescription language i used is JSON</p>
 <p>
   In this app i used the passport-jwt to authorize the every susequent request of user.To authorize we have to write a strategy by using methods of passport-jwt.
   so to do authorization,We need a something like anchor point that is jwt-token.So using this token we authorize the user.
